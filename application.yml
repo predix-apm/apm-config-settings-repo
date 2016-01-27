@@ -17,3 +17,6 @@ eureka:
   instance:
     hostname: https://apm-cloud-eureka-server-dev.grc-apps.svc.ice.ge.com
     nonSecurePort: 80
+  client:
+    serviceUrl:
+      defaultZone: https://apm-cloud-eureka-server-dev.grc-apps.svc.ice.ge.com/eureka/
