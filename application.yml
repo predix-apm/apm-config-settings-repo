@@ -8,15 +8,12 @@ eureka:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${server.port:8080}}
   client:
     serviceUrl:
-      defaultZone: https://apm-cloud-eureka-server-dev.grc-apps.svc.ice.ge.com/eureka/
+      defaultZone: ${vcap.services.apm-cloud-eureka-server-dev.credentials.uri:http://127.0.0.1:8761}/eureka/
 
 ---
 spring:
   profiles: cloud
 eureka:
   instance:
-    hostname: https://apm-cloud-eureka-server-dev.grc-apps.svc.ice.ge.com
+    hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
-  client:
-    serviceUrl:
-      defaultZone: https://apm-cloud-eureka-server-dev.grc-apps.svc.ice.ge.com/eureka/
